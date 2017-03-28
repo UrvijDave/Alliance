@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Create New Job</title>
+
+</head>
+<body>
+
+	<form>
+		<table>
+			<tr>
+				<td>Company Name:</td>
+				<td><input type="text" ng-model="job.companyname"></td>
+			</tr>
+
+			<tr>
+				<td>Job Title :</td>
+				<td><input type="text" ng-model="job.title"></td>
+			</tr>
+
+			<tr>
+				<td>Post Date :</td>
+				<td><input type="text" ng-model="job.postdate" /></td>
+			</tr>
+
+			<tr>
+				<td>Job Description :</td>
+				<td><textarea ng-model="job.description"></textarea></td>
+			</tr>
+
+			<tr>
+				<td>Qualification :</td>
+				<td><input type="text" ng-model="job.qualification"></td>
+			</tr>
+
+			<tr>
+				<td>Salary :</td>
+				<td><input type="text" ng-model="job.salary"></td>
+			</tr>
+
+			<tr>
+				<td>Location :</td>
+				<td><input type="text" ng-model="job.location"></td>
+			</tr>
+
+			<tr>
+				<td>Experience :</td>
+				<td><input type="text" ng-model="job.experience"></td>
+			</tr>
+			<tr>
+				<td>Expiry Date :</td>
+				<td><input type="text" ng-model="job.expirydate" /></td>
+			</tr>
+
+
+			<tr>
+				<td><input type="submit" value="Post Job" ng-click="saveJob()">
+				</td>
+			</tr>
+		</table>
+	</form>
+
+	<script type="text/javascript">
+		var months = [ 'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug',
+				'Sept', 'Oct', 'Nov', 'Dec' ];
+
+		function daysInMonth(month, year) {
+			return new Date(year, month, 0).getDate();
+		}
+
+		function populateDates() {
+			var today = new Date(), day = today.getUTCDate(), month = today
+					.getUTCMonth(), year = today.getUTCFullYear(), daysInCurrMonth = daysInMonth(
+					month, year);
+
+			// Year
+			for (var i = 0; i < 21; i++) {
+				var opt = document.createElement('option');
+				opt.value = i + year;
+				opt.text = i + year;
+				yeardropdown.appendChild(opt);
+			}
+
+			// Month
+			for (var i = 0; i < 12; i++) {
+				var opt = document.createElement('option');
+				opt.value = months[i];
+				opt.text = months[i];
+				monthdropdown.appendChild(opt);
+			}
+
+			// Day
+			for (var i = 0; i < daysInCurrMonth; i++) {
+				var opt = document.createElement('option');
+				opt.value = i + 1;
+				opt.text = i + 1;
+				daydropdown.appendChild(opt);
+			}
+		}
+
+		var daydropdown = document.getElementById("daydropdown"), monthdropdown = document
+				.getElementById("monthdropdown"), yeardropdown = document
+				.getElementById("yeardropdown");
+
+		// Change handler for months
+		monthdropdown.onchange = function() {
+			var newMonth = months.indexOf(monthdropdown.value) + 1, newYear = yeardropdown.value;
+
+			daysInCurrMonth = daysInMonth(newMonth, newYear);
+
+			daydropdown.innerHTML = "";
+			for (var i = 0; i < daysInCurrMonth; i++) {
+				var opt = document.createElement('option');
+				opt.value = i + 1;
+				opt.text = i + 1;
+				daydropdown.appendChild(opt);
+			}
+		}
+
+		populateDates()
+	</script>
+</body>
+</html>

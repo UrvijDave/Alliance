@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Edit Blog</title>
+</head>
+<body>
+
+	<form>
+		<table>
+			<tr>
+				<td>Blog Name :</td>
+				<td><input type="text" ng-model="blog.blogname"></td>
+			</tr>
+			<tr>
+				<td>Blog Description :</td>
+				<td><textarea ng-model="blog.blogdesc"></textarea></td>
+			</tr>
+			<tr>
+				<td>Status:</td>
+				<td><input type="radio" ng-model="blog.status" value="A">Approve
+					&nbsp;&nbsp; <input type="radio" ng-model="blog.status" value="P">Pending
+					&nbsp;&nbsp; <input type="radio" ng-model="blog.status" value="R">Reject
+					&nbsp;&nbsp;</td>
+			</tr>
+			<tr>
+				<td>Create Date:</td>
+				<td><input type="text" ng-model="blog.createddate"></td>
+			</tr>
+
+
+			<!--  <tr>
+				<td>Comments:</td>
+				<td><input type="text" ng-model="blog.comments"></td>
+			</tr>-->
+
+
+			<tr>
+				<td><input type="submit" value="Create Blog"
+					ng-click="update()"></td>
+			</tr>
+		</table>
+	</form>
+</body>
+</html>

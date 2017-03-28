@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>EditJob</title>
+</head>
+<body>
+
+	<form>
+		<table>
+			<tr>
+				<td>Company Name:</td>
+				<td><input type="text" ng-model="job.companyname"></td>
+			</tr>
+
+
+			<tr>
+				<td>Job Title :</td>
+				<td><input type="text" ng-model="job.title"></td>
+			</tr>
+			<tr>
+				<td>Post Date :</td>
+				<td><input type="text" ng-model="job.postdate"></td>
+			</tr>
+			<tr>
+				<td>Job Description :</td>
+				<td><textarea ng-model="job.description"></textarea></td>
+			</tr>
+
+			<tr>
+				<td>Qualification :</td>
+				<td><input type="text" ng-model="job.qualification"></td>
+			</tr>
+
+			<tr>
+				<td>Salary :</td>
+				<td><input type="text" ng-model="job.salary"></td>
+			</tr>
+
+			<tr>
+				<td>Location :</td>
+				<td><input type="text" ng-model="job.location"></td>
+			</tr>
+
+
+			<tr>
+				<td>Experience :</td>
+				<td><input type="text" ng-model="job.experience"></td>
+			</tr>
+			<tr>
+				<td>Status:</td>
+				<td><input type="radio" ng-model="job.status" value="A">Approve
+					&nbsp;&nbsp; <input type="radio" ng-model="job.status" value="P">Pending
+					&nbsp;&nbsp; <input type="radio" ng-model="job.status" value="R">Reject
+					&nbsp;&nbsp;</td>
+			</tr>
+
+
+			<tr>
+				<td>Expiry date :</td>
+				<td><input type="text" ng-model="job.expirydate"></td>
+			</tr>
+
+
+			<tr>
+				<td><input type="submit" value="Post Job" ng-click="update()">
+				</td>
+			</tr>
+		</table>
+	</form>
+</body>
+</html>

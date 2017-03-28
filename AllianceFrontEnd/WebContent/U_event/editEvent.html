@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Edit Event</title>
+</head>
+<body>
+
+	<form>
+		<table>
+
+
+			<tr>
+				<td>Event Name :</td>
+				<td><input type="text" ng-model="event.eventName"></td>
+			</tr>
+
+			<tr>
+				<td>Event Content :</td>
+				<td><textarea ng-model="event.eventContent"></textarea></td>
+			</tr>
+			<tr>
+				<td>Event Venue :</td>
+				<td><input type="text" ng-model="event.eventVenue"></td>
+			</tr>
+			<tr>
+				<td>Event Date:</td>
+				<td><input type="text" ng-model="event.eventDate"></td>
+			</tr>
+
+
+			<tr>
+				<td>Event Time:</td>
+				<td><input type="text" ng-model="event.eventTime"></td>
+			</tr>
+
+
+			<tr>
+				<td><input type="submit" value="Post Event" ng-click="update()"></td>
+			</tr>
+		</table>
+	</form>
+</body>
+</html>

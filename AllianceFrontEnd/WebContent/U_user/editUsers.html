@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Edit User</title>
+</head>
+<body>
+	<form>
+		<table>
+			<tr>
+				<td>Fullname:</td>
+				<td><input type="text" ng-model="user.fullname"></td>
+			</tr>
+			<tr>
+				<td>Gender:</td>
+				<td><input type="radio" ng-model="user.gender" value="MALE">Male
+					<input type="radio" ng-model="user.gender" value="FEMALE">Female</td>
+
+			</tr>
+			<tr>
+				<td>Dob:</td>
+				<td><input type="text" ng-model="user.dateofbirth" required /></td>
+			</tr>
+			<tr>
+				<td>Mobile No:</td>
+				<td><input type="mobile" ng-model="user.mobile"></td>
+			</tr>
+			<tr>
+				<td>Email ID:</td>
+				<td><input type="text" ng-model="user.email"></td>
+			</tr>
+			<tr>
+				<td>User Name:</td>
+				<td><input type="text" ng-model="user.username"></td>
+			</tr>
+			<tr>
+				<td>Password:</td>
+				<td><input type="password" ng-model="user.password"></td>
+			</tr>
+			<tr>
+				<td>City:</td>
+				<td><input type="city" ng-model="user.city"></td>
+			</tr>
+
+			<tr>
+				<td>Role :</td>
+				<td><input type="radio" ng-model="user.role" value="STUDENT">Student
+					<input type="radio" ng-model="user.role" value="ALUMNI">Alumni
+					<input type="radio" ng-model="user.role" value="EMPLOYEE">Employee</td>
+			</tr>
+			<tr ng-show="currentUser.role=='ADMIN'">
+
+				<td>Status:</td>
+				<td><input type="radio" ng-model="user.status" value="A">Approve
+					&nbsp;&nbsp; <input type="radio" ng-model="user.status" value="P">Pending
+					&nbsp;&nbsp; <input type="radio" ng-model="user.status" value="R">Reject
+					&nbsp;&nbsp;</td>
+			</tr>
+
+			<tr>
+				<td><input type="submit" ng-click="update()"></td>
+			</tr>
+
+
+		</table>
+
+	</form>
+	{{errorMessage}}
+</body>
+</html>

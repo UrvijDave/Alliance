@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Create Blog</title>
+</head>
+<body>
+
+	<form>
+		<table>
+
+
+			<tr>
+				<td>Blog Name :</td>
+				<td><input type="text" ng-model="blog.blogname"></td>
+			</tr>
+			
+			<tr>
+				<td>Blog Description :</td>
+				<td><textarea ng-model="blog.blogdesc"></textarea></td>
+			</tr>
+
+			<tr>
+				<td><input type="submit" value="Create Blog"
+					ng-click="saveBlog()"></td>
+			</tr>
+		</table>
+	</form>
+</body>
+</html>

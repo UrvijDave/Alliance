@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Edit News</title>
+</head>
+<body>
+
+	<form>
+		<table>
+
+			<tr>
+				<td>News Title :</td>
+				<td><input type="text" ng-model="news.bulletinHead"></td>
+			</tr>
+			<tr>
+				<td>News Body :</td>
+				<td><textarea ng-model="news.bulletinBody"></textarea></td>
+			</tr>
+			<tr>
+				<td>Create Date:</td>
+				<td><input type="text" ng-model="news.bulletinDate"></td>
+			</tr>
+			<tr>
+				<td><input type="submit" value="Upadte News"
+					ng-click="update()"></td>
+			</tr>
+		</table>
+	</form>
+</body>
+</html>
